@@ -13,7 +13,7 @@ export default defineConfig({
     host_permissions: ["<all_urls>"],
     browser_specific_settings: {
       gecko: {
-        id: "manaba-download-router-firefox@nito-008.github.com",
+        id: "manaba-download-router-firefox@nito008.com",
         data_collection_permissions: {
           required: ["none"],
         },
