@@ -1,7 +1,12 @@
 import { defineConfig } from "wxt";
+import "@wxt-dev/auto-icons";
 
 // See https://wxt.dev/api/config.html
 export default defineConfig({
+  modules: ["@wxt-dev/auto-icons"],
+  autoIcons: {
+    baseIconPath: "assets/icon.svg",
+  },
   manifestVersion: 3,
   manifest: {
     permissions: ["tabs", "scripting", "downloads"],
