@@ -1,6 +1,10 @@
 const BASE_DIR_NAME = "manaba-downloads";
 let latestCourseName = "";
 
+function isManaba(url: string): boolean {
+  return new URL(url).hostname.includes("manaba");
+}
+
 async function getCourseName(tabId: number): Promise<string> {
   const result = await browser.scripting.executeScript({
     target: { tabId },
@@ -14,6 +18,7 @@ async function onTabUpdate(
   changeInfo: Browser.tabs.OnUpdatedInfo,
   tab: Browser.tabs.Tab,
 ) {
+  if (tab.url && !isManaba(tab.url)) return;
   if (changeInfo.status !== "complete") return;
 
   const courseName = await getCourseName(tabId);
@@ -33,6 +38,7 @@ function getDownloadPath(fileName: string): string {
 
 function onDownloadCreated(downloadItem: Browser.downloads.DownloadItem) {
   if (downloadItem.byExtensionId) return;
+  if (!isManaba(downloadItem.url)) return;
 
   browser.downloads
     .cancel(downloadItem.id)
