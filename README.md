@@ -24,7 +24,6 @@ npm run build:firefox
 `.output/manaba-download-router-[version]-sources.zip`が生成される。
 
 ```sh
-npm run compile
 npm run zip:firefox
 ```
 
