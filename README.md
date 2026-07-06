@@ -1,6 +1,6 @@
 # manaba-download-router-firefox
 
-Manabaからダウンロードするファイルを自動でフォルダ分けする拡張機能のFirefox版
+manabaからダウンロードするファイルを自動でフォルダ分けする拡張機能のFirefox版
 
 ## これは何？
 
