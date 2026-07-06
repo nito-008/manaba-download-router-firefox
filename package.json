@@ -2,7 +2,7 @@
   "name": "manaba-download-router",
   "description": "manabaからダウンロードするファイルを自動でフォルダ分けする拡張機能",
   "private": true,
-  "version": "1.0.5",
+  "version": "1.0.6",
   "type": "module",
   "scripts": {
     "dev": "wxt",
