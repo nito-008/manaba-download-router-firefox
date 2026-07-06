@@ -1,6 +1,6 @@
 {
-  "name": "manaba-download-router-firefox",
-  "description": "manabaからダウンロードするファイルを自動でフォルダ分けする拡張機能の非公式Firefox版",
+  "name": "manaba-download-router",
+  "description": "manabaからダウンロードするファイルを自動でフォルダ分けする拡張機能",
   "private": true,
   "version": "1.0.5",
   "type": "module",
