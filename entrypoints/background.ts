@@ -13,6 +13,14 @@ async function getCourseName(tabId: number): Promise<string> {
   return result[0]?.result ?? "";
 }
 
+function getBaseName(filePath: string): string {
+  return filePath.split(/[\\/]/).pop() ?? "";
+}
+
+function getDownloadPath(fileName: string): string {
+  return [BASE_DIR_NAME, latestCourseName, getBaseName(fileName)].join("/");
+}
+
 async function onTabUpdate(
   tabId: number,
   changeInfo: Browser.tabs.OnUpdatedInfo,
@@ -26,14 +34,6 @@ async function onTabUpdate(
 
   latestCourseName = courseName;
   console.log("Course name updated: ", courseName);
-}
-
-function getBaseName(filePath: string): string {
-  return filePath.split(/[\\/]/).pop() ?? "";
-}
-
-function getDownloadPath(fileName: string): string {
-  return [BASE_DIR_NAME, latestCourseName, getBaseName(fileName)].join("/");
 }
 
 function onDownloadCreated(downloadItem: Browser.downloads.DownloadItem) {
