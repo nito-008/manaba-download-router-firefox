@@ -2,7 +2,7 @@
   "name": "manaba-download-router-firefox",
   "description": "manabaからダウンロードするファイルを自動でフォルダ分けする拡張機能の非公式Firefox版",
   "private": true,
-  "version": "1.0.2",
+  "version": "1.0.4",
   "type": "module",
   "scripts": {
     "dev": "wxt",
@@ -12,6 +12,8 @@
     "zip": "wxt zip",
     "zip:firefox": "wxt zip -b firefox",
     "compile": "tsc --noEmit",
+    "release": "npm version --message \"chore(release): v%s\"",
+    "release:push": "git push --follow-tags",
     "postinstall": "wxt prepare"
   },
   "devDependencies": {

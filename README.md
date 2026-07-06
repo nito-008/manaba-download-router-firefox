@@ -31,9 +31,8 @@ npm run zip:firefox
 ### リリースタグを打つ
 
 自動でリリースが作成される。便利。
-`package.json`のバージョンも上げること。
 
 ```sh
-git tag v1.0.0
-git push origin --tags
+npm run release -- 1.0.0
+npm run release:push
 ```

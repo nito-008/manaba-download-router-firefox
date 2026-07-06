@@ -45,6 +45,7 @@ jobs:
 
           if [ "$TAG_VERSION" != "$PACKAGE_VERSION" ]; then
             echo "Tag version ($TAG_VERSION) does not match package.json version ($PACKAGE_VERSION)."
+            echo "Use npm run release -- $TAG_VERSION to create release commits and tags."
             exit 1
           fi
 
