@@ -60,13 +60,16 @@ jobs:
       - name: Create release archives
         run: npm run zip:firefox
 
+      - name: Collect release assets
+        run: |
+          mkdir -p release-assets
+          cp .output/*-firefox.zip .output/*-sources.zip release-assets/
+
       - name: Upload workflow artifact
         uses: actions/upload-artifact@v4
         with:
           name: firefox-release
-          path: |
-            .output/*-firefox.zip
-            .output/*-sources.zip
+          path: release-assets/*.zip
           if-no-files-found: error
 
       - name: Publish GitHub Release
@@ -74,7 +77,5 @@ jobs:
         uses: softprops/action-gh-release@v2
         with:
           tag_name: ${{ github.event.inputs.release_tag || github.ref_name }}
-          files: |
-            .output/*-firefox.zip
-            .output/*-sources.zip
+          files: release-assets/*.zip
           generate_release_notes: true
